@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esportes Acessíveis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #004466;
+      color: #fff;
+      padding: 20px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #004466;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      margin: 15px;
+      width: 260px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    .card h3 {
+      margin: 10px 0;
+      padding: 0 10px;
+    }
+    .card p {
+      padding: 0 10px 15px;
+      font-size: 14px;
+      color: #555;
+    }
+    .section {
+      background: #f2f9ff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+    .section ul {
+      list-style: "⭐ ";
+      padding-left: 20px;
+    }
+    footer {
+      background: #004466;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>🌟 Esportes para Pessoas com Deficiência 🌟</header>
+
+  <!-- ESPORTES -->
+  <div class="container">
+    <div class="card" onclick="falar('Futebol adaptado: esporte coletivo que promove inclusão e trabalho em equipe.')">
+      <img src="futebol.png" alt="Futebol adaptado">
+      <h3>Futebol Adaptado</h3>
+      <p>Esporte coletivo que fortalece o trabalho em equipe.</p>
+    </div>
+
+    <div class="card" onclick="falar('Natação paralímpica: ajuda no condicionamento físico e na reabilitação.')">
+      <img src="natacao.png" alt="Natação paralímpica">
+      <h3>Natação Paralímpica</h3>
+      <p>Excelente para reabilitação e condicionamento.</p>
+    </div>
+
+    <div class="card" onclick="falar('Basquete em cadeira de rodas: promove agilidade e inclusão social.')">
+      <img src="basquete.png" alt="Basquete em cadeira de rodas">
+      <h3>Basquete em Cadeira de Rodas</h3>
+      <p>Desenvolve coordenação e espírito de equipe.</p>
+    </div>
+
+    <div class="card" onclick="falar('Atletismo adaptado: corridas, arremessos e saltos para todos os níveis.')">
+      <img src="atletismo.png" alt="Atletismo adaptado">
+      <h3>Atletismo Adaptado</h3>
+      <p>Corridas e lançamentos para superação pessoal.</p>
+    </div>
+
+    <div class="card" onclick="falar('Tênis de mesa paralímpico: trabalha reflexos e coordenação.')">
+      <img src="tenis.png" alt="Tênis de mesa">
+      <h3>Tênis de Mesa Paralímpico</h3>
+      <p>Trabalha reflexos e coordenação motora.</p>
+    </div>
+  </div>
+
+  <!-- CURIOSIDADES -->
+  <div class="section">
+    <h2>Curiosidades sobre o Esporte Paralímpico</h2>
+    <ul>
+      <li>Os Jogos Paralímpicos começaram em 1960, em Roma.</li>
+      <li>O Brasil já conquistou mais de 300 medalhas paralímpicas.</li>
+      <li>Alguns esportes adaptados foram criados especialmente para pessoas com deficiência, como o goalball.</li>
+      <li>A natação paralímpica tem categorias que se adaptam ao tipo de deficiência.</li>
+      <li>O basquete em cadeira de rodas surgiu logo após a Segunda Guerra Mundial.</li>
+    </ul>
+  </div>
+
+  <!-- DICAS -->
+  <div class="section">
+    <h2>Dicas para Quem Quer Começar</h2>
+    <ul>
+      <li>Procure projetos sociais ou associações esportivas na sua cidade.</li>
+      <li>Converse com profissionais de saúde e educação física para indicar o esporte mais adequado.</li>
+      <li>Não tenha medo de experimentar modalidades diferentes até encontrar a que mais gosta.</li>
+      <li>Comece devagar e respeite seus limites físicos.</li>
+      <li>Lembre-se: o esporte é inclusão, saúde e diversão!</li>
+    </ul>
+  </div>
+
+  <footer>🔊 Clique em um esporte para ouvir a descrição | Projeto de Extensão</footer>
+
+  <script>
+    function falar(texto) {
+      const msg = new SpeechSynthesisUtterance(texto);
+      msg.lang = "pt-BR";
+
+      // tenta achar voz em português
+      const vozes = speechSynthesis.getVoices();
+      const voz = vozes.find(v => v.lang === "pt-BR");
+      if (voz) msg.voice = voz;
+
+      speechSynthesis.speak(msg);
+    }
+
+    // força carregar vozes
+    window.speechSynthesis.onvoiceschanged = () => {};
+  </script>
+</body>
+</html>
