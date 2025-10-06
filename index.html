@@ -71,6 +71,16 @@
       list-style: "⭐ ";
       padding-left: 20px;
     }
+    .section li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .section li:hover {
+      background: #d6f0ff;
+    }
     footer {
       background: #004466;
       color: white;
@@ -119,11 +129,11 @@
   <div class="section">
     <h2>Curiosidades sobre o Esporte Paralímpico</h2>
     <ul>
-      <li>Os Jogos Paralímpicos começaram em 1960, em Roma.</li>
-      <li>O Brasil já conquistou mais de 300 medalhas paralímpicas.</li>
-      <li>Alguns esportes adaptados foram criados especialmente para pessoas com deficiência, como o goalball.</li>
-      <li>A natação paralímpica tem categorias que se adaptam ao tipo de deficiência.</li>
-      <li>O basquete em cadeira de rodas surgiu logo após a Segunda Guerra Mundial.</li>
+      <li onclick="falar(this.innerText)">Os Jogos Paralímpicos começaram em 1960, em Roma.</li>
+      <li onclick="falar(this.innerText)">O Brasil já conquistou mais de 300 medalhas paralímpicas.</li>
+      <li onclick="falar(this.innerText)">Alguns esportes adaptados foram criados especialmente para pessoas com deficiência, como o goalball.</li>
+      <li onclick="falar(this.innerText)">A natação paralímpica tem categorias que se adaptam ao tipo de deficiência.</li>
+      <li onclick="falar(this.innerText)">O basquete em cadeira de rodas surgiu logo após a Segunda Guerra Mundial.</li>
     </ul>
   </div>
 
@@ -131,15 +141,15 @@
   <div class="section">
     <h2>Dicas para Quem Quer Começar</h2>
     <ul>
-      <li>Procure projetos sociais ou associações esportivas na sua cidade.</li>
-      <li>Converse com profissionais de saúde e educação física para indicar o esporte mais adequado.</li>
-      <li>Não tenha medo de experimentar modalidades diferentes até encontrar a que mais gosta.</li>
-      <li>Comece devagar e respeite seus limites físicos.</li>
-      <li>Lembre-se: o esporte é inclusão, saúde e diversão!</li>
+      <li onclick="falar(this.innerText)">Procure projetos sociais ou associações esportivas na sua cidade.</li>
+      <li onclick="falar(this.innerText)">Converse com profissionais de saúde e educação física para indicar o esporte mais adequado.</li>
+      <li onclick="falar(this.innerText)">Não tenha medo de experimentar modalidades diferentes até encontrar a que mais gosta.</li>
+      <li onclick="falar(this.innerText)">Comece devagar e respeite seus limites físicos.</li>
+      <li onclick="falar(this.innerText)">Lembre-se: o esporte é inclusão, saúde e diversão!</li>
     </ul>
   </div>
 
-  <footer>🔊 Clique em um esporte para ouvir a descrição | Projeto de Extensão</footer>
+  <footer>🔊 Clique em um esporte, curiosidade ou dica para ouvir a descrição | Projeto de Extensão</footer>
 
   <script>
     function falar(texto) {
