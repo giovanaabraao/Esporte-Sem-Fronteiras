@@ -7,22 +7,22 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #6dd5ed, #2193b0);
-      color: #333;
+      background: #000; /* Fundo preto */
+      color: #FFD700; /* Texto amarelo */
       margin: 0;
       padding: 0;
       text-align: center;
     }
     header {
-      background: #004466;
-      color: #fff;
+      background: #222;
+      color: #FFD700;
       padding: 20px;
       font-size: 26px;
       font-weight: bold;
     }
     h2 {
       margin-top: 30px;
-      color: #004466;
+      color: #FFD700;
     }
     .container {
       display: flex;
@@ -31,16 +31,18 @@
       margin: 20px;
     }
     .card {
-      background: #fff;
+      background: #111;
+      border: 2px solid #FFD700;
       border-radius: 12px;
       margin: 15px;
       width: 260px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
       cursor: pointer;
-      transition: transform 0.2s;
+      transition: transform 0.2s, background 0.3s;
     }
     .card:hover {
       transform: scale(1.05);
+      background: #222;
     }
     .card img {
       width: 100%;
@@ -48,24 +50,27 @@
       object-fit: cover;
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
+      border-bottom: 2px solid #FFD700;
     }
     .card h3 {
       margin: 10px 0;
       padding: 0 10px;
+      color: #FFD700;
     }
     .card p {
       padding: 0 10px 15px;
       font-size: 14px;
-      color: #555;
+      color: #fff;
     }
     .section {
-      background: #f2f9ff;
+      background: #111;
       margin: 20px auto;
       padding: 20px;
       border-radius: 10px;
       width: 80%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
       text-align: left;
+      border: 2px solid #FFD700;
     }
     .section ul {
       list-style: "⭐ ";
@@ -77,13 +82,14 @@
       transition: background 0.3s;
       padding: 5px;
       border-radius: 5px;
+      color: #FFD700;
     }
     .section li:hover {
-      background: #d6f0ff;
+      background: #333;
     }
     footer {
-      background: #004466;
-      color: white;
+      background: #222;
+      color: #FFD700;
       padding: 10px;
       margin-top: 20px;
     }
@@ -155,16 +161,11 @@
     function falar(texto) {
       const msg = new SpeechSynthesisUtterance(texto);
       msg.lang = "pt-BR";
-
-      // tenta achar voz em português
       const vozes = speechSynthesis.getVoices();
       const voz = vozes.find(v => v.lang === "pt-BR");
       if (voz) msg.voice = voz;
-
       speechSynthesis.speak(msg);
     }
-
-    // força carregar vozes
     window.speechSynthesis.onvoiceschanged = () => {};
   </script>
 </body>
